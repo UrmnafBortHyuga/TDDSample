@@ -20,7 +20,15 @@ namespace TDDSample.Rentals
 
         public string Statement()
         {
-            return null;
+
+            var totalpay = 0;
+
+            foreach (var rental in _rentals)
+            {
+                totalpay += rental.CalcFee();
+            }
+
+            return $"{totalpay}円";
         }
     }
 }

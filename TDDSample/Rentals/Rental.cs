@@ -1,4 +1,6 @@
-﻿namespace TDDSample.Rentals
+﻿using NUnit.Framework;
+
+namespace TDDSample.Rentals
 {
     public sealed class Rental
     {
@@ -9,6 +11,10 @@
         {
             Movie = movie;
             DaysRented = daysRented;
+        }
+        public int CalcFee()
+        {
+            return Movie.CalcFee(DaysRented);
         }
     }
 }
